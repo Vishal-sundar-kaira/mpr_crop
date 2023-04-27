@@ -16,11 +16,13 @@
     "feature2":"Disease Detection",
     "feature3":"How it works?",
     "bestcrop":"Best Crop",
-    "nitrogen":"Nitrogen",
-    "phosphorus":"Phosphorus",
-    "potassium":"Potassium",
-    "humidity":"Humidity",
-    "temperature":"Temperature",
-    "rainfall":"Rainfall",
-    "ph":"PH"
+    "nitrogen":"Nitrogen  (0 to 400 lbs/acre)",
+    "phosphorus":"Phosphorus (0 to 200 lbs/acre)",
+    "potassium":"Potassium (0 to 300 lbs/acre)",
+    "humidity":"Humidity (0% to 100%)" ,
+    "temperature":"Temperature (-50°C to 50°C) ",
+    "rainfall":"Rainfall (0 mm to 1000 mm)",
+    "ph":"PH (0 to 14)",
+    "predict":"predict",
+    "clearall":"clearall"
 }

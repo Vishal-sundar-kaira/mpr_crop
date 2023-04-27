@@ -5,36 +5,36 @@ import spinnergif from './images/spinner.gif'
 import notescontext from "../Components/context/notes/notecontext"
 import hindi from "../Hindi.json"
 import english from "../english.json"
-// import rice from './images/rice.jpg'
-// import maize from './images/maize.jpg'
-// import chickpea from './images/chickpea.jpg'
-// import kidneybeans from './images/kidneybeans.jpg'
-// import pigeonpeas from './images/pigeonpeas.jpg'
-// import mothbeans from './images/mothbeans.jpg'
-// import mungbean from './images/mungbean.jpg'
-// import blackgram from './images/blackgrams.jpg'
-// import lentil from './images/lentils.jpg'
-// import pomegranate from './images/pomegranate.jpg'
-// import banana from './images/banana.jpg'
-// import mango from './images/mango.jpg'
-// import grapes from './images/grapes.jpg'
-// import watermelon from './images/watermelon.jpg'
-// import muskmelon from './images/muskmelon.jpg'
-// import apple from './images/apple.jpg'
-// import orange from './images/orange.jpg'
-// import papaya from './images/papaya.jpg'
-// import coconut from './images/coconut.jpg'
-// import cotton from './images/cotton.jpg'
-// import jute from './images/jute.jpg'
-// import cofee from './images/coffee.jpg'
+import rice from './images/rice.jpg'
+import maize from './images/maize.jpg'
+import chickpea from './images/chickpea.jpg'
+import kidneybeans from './images/kidneybeans.jpg'
+import pigeonpeas from './images/pigeonpeas.jpg'
+import mothbeans from './images/mothbeans.jpg'
+import mungbean from './images/mungbean.jpg'
+import blackgram from './images/blackgrams.jpg'
+import lentil from './images/lentils.jpg'
+import pomegranate from './images/pomegranate.jpg'
+import banana from './images/banana.jpg'
+import mango from './images/mango.jpg'
+import grapes from './images/grapes.jpg'
+import watermelon from './images/watermelon.jpg'
+import muskmelon from './images/muskmelon.jpg'
+import apple from './images/apple.jpg'
+import orange from './images/orange.jpg'
+import papaya from './images/papaya.jpg'
+import coconut from './images/coconut.jpg'
+import cotton from './images/cotton.jpg'
+import jute from './images/jute.jpg'
+import cofee from './images/coffee.jpg'
 
 
 
 
-// # rice,maize,chickpea,kidneybeans,pigeonpeas,mothbeans,mungbean,blackgram,lentil,pomegranate,banana,mango,grapes,watermelon,muskmelon,apple,orange,papaya,coconut,cotton,jute,cofee
 const Recommend = () => {
   const[val,setval]=useState({n:"",p:"",k:"",t:"",h:"",ph:"",rain:""})
   const [disable,setdisable]=useState(true)
+  const[mainval,setmainval]=useState("value")
   const[spinner,setspinner]=useState([false,"value", false ])
   const context=useContext(notescontext)
   const {res,storeval}=context;            
@@ -61,7 +61,8 @@ const Recommend = () => {
 
   useEffect(() => {
     if (res[0] === true && res[2] === true) {
-      setspinner([res[0], res[1], res[2]]);
+      setspinner([res[0],res[1],res[2]]);
+      setmainval(res[1].trim());
     }
   }, [res]);
   const handleclick=(e)=>{
@@ -116,34 +117,35 @@ const Recommend = () => {
     </div>
     <div className="right" style={{position:"relative",zIndex:"-1"}}>
         <h1 >{getText("bestcrop")}</h1>
-        {console.log(spinner[1])}
-        {/* {spinner[1]==="rice" && <img src={rice} alt="rice"></img>}
-        {spinner[1] === "maize" && <img src={maize} alt="maize" />}
-        {spinner[1] === "chickpea" && <img src={chickpea} alt="chickpea" />}
-        {spinner[1] === "kidneybeans" && <img src={kidneybeans} alt="kidneybeans" />}
-        {spinner[1] === "pigeonpeas" && <img src={pigeonpeas} alt="pigeonpeas" />}
-        {spinner[1] === "mothbeans" && <img src={mothbeans} alt="mothbeans" />}
-        {spinner[1] === "mungbean" && <img src={mungbean} alt="mungbean" />}
-        {spinner[1] === "blackgram" && <img src={blackgram} alt="blackgram" />}
-        {spinner[1] === "lentil" && <img src={lentil} alt="lentil" />}
-        {spinner[1] === "pomegranate" && <img src={pomegranate} alt="pomegranate" />}
-        {spinner[1] === "banana" && <img src={banana} alt="banana" />}
-        {spinner[1] === "mango" && <img src={mango} alt="mango" />}
-        {spinner[1] === "grapes" && <img src={grapes} alt="grapes" />}
-        {spinner[1] === "watermelon" && <img src={watermelon} alt="watermelon" />}
-        {spinner[1] === "muskmelon" && <img src={muskmelon} alt="muskmelon" />}
-        {spinner[1] === "apple" && <img src={apple} alt="apple" />}
-        {spinner[1] === "orange" && <img src={orange} alt="orange" />}
-        {spinner[1] === "papaya" && <img src={papaya} alt="papaya" />}
-        {spinner[1] === "coconut" && <img src={coconut} alt="coconut" />}
-        {spinner[1] === "cotton" && <img src={cotton} alt="cotton" />}
-        {spinner[1] === "jute" && <img src={jute} alt="jute" />}
-        {spinner[1] === "cofee" && <img src={cofee} alt="cofee" />}
-        {spinner[1] === "value" && <img src={cropgif} alt="crop" />} */}
-        <img src={cropgif} alt="crop" />  
+        {console.log(mainval)}
+        {console.log("yaha sab sahi he")}
+        {mainval==="rice" && <img src={rice} alt="rice"></img>}
+        {mainval === "maize" && <img src={maize} alt="maize" />}
+        {mainval === "chickpea" && <img src={chickpea} alt="chickpea" />}
+        {mainval === "kidneybeans" && <img src={kidneybeans} alt="kidneybeans" />}
+        {mainval === "pigeonpeas" && <img src={pigeonpeas} alt="pigeonpeas" />}
+        {mainval === "mothbeans" && <img src={mothbeans} alt="mothbeans" />}
+        {mainval === "mungbean" && <img src={mungbean} alt="mungbean" />}
+        {mainval === "blackgram" && <img src={blackgram} alt="blackgram" />}
+        {mainval === "lentil" && <img src={lentil} alt="lentil" />}
+        {mainval === "pomegranate" && <img src={pomegranate} alt="pomegranate" />}
+        {mainval === "banana" && <img src={banana} alt="banana" />}
+        {mainval === "mango" && <img src={mango} alt="mango" />}
+        {mainval === "grapes" && <img src={grapes} alt="grapes" />}
+        {mainval === "watermelon" && <img src={watermelon} alt="watermelon" />}
+        {mainval === "muskmelon" && <img src={muskmelon} alt="muskmelon" />}
+        {mainval === "apple" && <img src={apple} alt="apple" />}
+        {mainval === "orange" && <img src={orange} alt="orange" />}
+        {mainval === "papaya" && <img src={papaya} alt="papaya" />}
+        {mainval === "coconut" && <img src={coconut} alt="coconut" />}
+        {mainval === "cotton" && <img src={cotton} alt="cotton" />}
+        {mainval === "jute" && <img src={jute} alt="jute" />}
+        {mainval === "cofee" && <img src={cofee} alt="cofee" />}
+        {mainval === "value" && <img src={cropgif} alt="crop" />}
+        
         <div className='spinner' style={{width:"10vw",position:"absolute",right:"35%",top:"46%"}}>
         {((spinner[0] === false&& spinner[2]===false)||(spinner[0]===true&&spinner[2]===true)) ? (
-      <div className="btn btn-outline-success mx-3 fw-bolder">{spinner[1]}</div>
+      <div className="font-weight-bold fs-5"><u>{spinner[1]}</u></div>
     ) : (
      <img style={{margin:"0px"}} alt="predicting" src={spinnergif} />
     )}
@@ -153,8 +155,8 @@ const Recommend = () => {
     </div>
 </div>
     
-    <button type="submit" disabled={disable} onClick={handleclick} className="btn btn-success m-3" >Predict</button>
-    <button type="button" onClick={clear} className="btn btn-success m-3">Clearall</button>
+    <button type="submit" disabled={disable} onClick={handleclick} className="btn btn-success m-3" >{getText("predict")}</button>
+    <button type="button" onClick={clear} className="btn btn-success m-3">{getText("clearall")}</button>
     </>
   )
 }
